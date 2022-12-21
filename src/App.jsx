@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className="app">
       <h1>Random User Generator</h1>
-      <Button label="Get Random Character" onClick={getUser} />
+      <Button label="Get Random User" onClick={getUser} />
       <ProfileCard />
     </div>
   );
