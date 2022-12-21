@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.scss";
 import Button from "./components/Button/Button";
+import ProfileCard from "./components/ProfileCard/ProfileCard";
 
 const App = () => {
   const [char, setChar] = useState();
@@ -15,6 +16,7 @@ const App = () => {
     <div className="app">
       <h1>Random User Generator</h1>
       <Button label="Get Random User" onClick={getUser} />
+      <ProfileCard />
     </div>
   );
 };
