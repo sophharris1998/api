@@ -2,12 +2,13 @@ import { useState } from "react";
 import "./App.scss";
 import Button from "./components/Button/Button";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
+import ProfileContainers from "./Containers/ProfileContainers/ProfileContainers";
 
 const App = () => {
-  const [users, setUsers] = useState();
+  const [users, setUsers] = useState([]);
 
   const getUsers = async () => {
-    const response = await fetch("https://randomuser.me/api/?results=3");
+    const response = await fetch("https://randomuser.me/api/?results=5");
     const data = await response.json();
     console.log(data.results);
     setUsers(data.results);
@@ -17,14 +18,7 @@ const App = () => {
     <div className="app">
       <h1>Random User Generator</h1>
       <Button label="Get Random User" handleClick={getUsers} />
-      {users && (
-        <ProfileCard
-          name={users[0].name.first}
-          email={users[0].email}
-          phoneNumber={users[0].phone}
-          image={users[0].picture.large}
-        />
-      )}
+      <ProfileContainers profiles={users} />
     </div>
   );
 };
