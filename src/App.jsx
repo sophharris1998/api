@@ -8,7 +8,7 @@ const App = () => {
   const [users, setUsers] = useState([]);
 
   const getUsers = async () => {
-    const response = await fetch("https://randomuser.me/api/?results=5");
+    const response = await fetch("https://randomuser.me/api/?results=6");
     const data = await response.json();
     console.log(data.results);
     setUsers(data.results);
